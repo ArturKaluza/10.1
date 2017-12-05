@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+</head>
+<body>
+   <div>
+        <div>
+            <p><span>span 1</span></p>
+        </div>
+        <div>
+            <p>1</p>
+        </div>
+        <div>
+            <p><span>span 2</span></p>
+        </div>
+        <div>
+            <p>2</p>
+        </div>
+        <div>
+            <p><span>span 3</span></p>
+        </div>
+        <div>
+            <p>3</p>
+        </div>
+        <div>
+            <p><span>span 4</span></p>
+        </div>
+        <div>
+            <p>4</p>
+        </div>
+        <div>
+            <p><span>span 5</span></p>
+        </div>
+        <div>
+            <p>5</p>
+        </div>
+   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    /*
+    $('span').each(function(index, element){
+        if (index % 2 == 0 ) {
+            $(element).css('color', 'red');
+        }
+    })
+    */ 
+
+    $('span:even').css('color', 'red');
+
+    
+    var paragraphs = $('p');
+    paragraphs.each(function(index, element){
+        var button = '<button class="btn" data-tmp="' + index + '">Click me</button>';
+        $(element).append(button);
+    })
+
+    $('button').click(function(){
+        alert($(this).attr('data-tmp'));
+    })
+
+</script>   
+</body>
+</html>
